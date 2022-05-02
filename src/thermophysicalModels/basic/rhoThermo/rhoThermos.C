@@ -54,6 +54,8 @@ License
 #include "pureMixture.H"
 
 #include "polymerKTransport.H"
+#include "rhoPolymerEOS.H"
+#include "hPolymerThermo.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -61,6 +63,7 @@ namespace Foam
 {
 
 /* * * * * * * * * * * * * * * private static data * * * * * * * * * * * * * */
+// * * * * * * * * * * * * * OWN COMBINATIONS * * * * * * * * * * * * * * //
 
 makeThermos
 (
@@ -69,13 +72,13 @@ makeThermos
     pureMixture,
     polymerKTransport,
     sensibleEnthalpy,
-    hConstThermo,
-    perfectGas,
+    hPolymerThermo,
+    rhoPolymerEOS,
     specie
 );
 
 
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+// * * * * * * * * * * * * * OPENFOAM PRESET * * * * * * * * * * * * * * //
 
 makeThermos
 (
