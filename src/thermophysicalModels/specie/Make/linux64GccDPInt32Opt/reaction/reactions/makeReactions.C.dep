@@ -52,6 +52,7 @@ lnInclude/eConstThermo.H \
 lnInclude/sensibleEnthalpy.H \
 lnInclude/sensibleInternalEnergy.H \
 lnInclude/constTransport.H \
+lnInclude/polymerKTransport.H \
 lnInclude/speciesTable.H \
 lnInclude/specieCoeffs.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/HashPtrTable.H \
@@ -115,6 +116,8 @@ lnInclude/eConstThermoI.H \
 lnInclude/eConstThermo.C \
 lnInclude/constTransportI.H \
 lnInclude/constTransport.C \
+lnInclude/polymerKTransportI.H \
+lnInclude/polymerKTransport.C \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/hashedWordList.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/HashTable.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/HashPtrTable.C \
@@ -368,6 +371,7 @@ lnInclude/eConstThermo.H :
 lnInclude/sensibleEnthalpy.H :
 lnInclude/sensibleInternalEnergy.H :
 lnInclude/constTransport.H :
+lnInclude/polymerKTransport.H :
 lnInclude/speciesTable.H :
 lnInclude/specieCoeffs.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/HashPtrTable.H :
@@ -431,6 +435,8 @@ lnInclude/eConstThermoI.H :
 lnInclude/eConstThermo.C :
 lnInclude/constTransportI.H :
 lnInclude/constTransport.C :
+lnInclude/polymerKTransportI.H :
+lnInclude/polymerKTransport.C :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/hashedWordList.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/HashTable.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/HashPtrTable.C :
