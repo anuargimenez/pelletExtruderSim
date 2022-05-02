@@ -1,7 +1,7 @@
 $(OBJECTS_DIR)/polymSimpleFoam.C.dep: \
 polymSimpleFoam.C \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvCFD.H \
-$(WM_PROJECT_DIR)/src/thermophysicalModels/basic/lnInclude/fluidThermo.H \
+/home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/basic/lnInclude/fluidThermo.H \
 $(WM_PROJECT_DIR)/src/TurbulenceModels/compressible/lnInclude/turbulentFluidThermoModel.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/simpleControl.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/pressureControl.H \
@@ -40,7 +40,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/constants.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/OSspecific.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/argList.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/timeSelector.H \
-$(WM_PROJECT_DIR)/src/thermophysicalModels/basic/lnInclude/basicThermo.H \
+/home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/basic/lnInclude/basicThermo.H \
 $(WM_PROJECT_DIR)/src/transportModels/compressible/lnInclude/compressibleTransportModel.H \
 $(WM_PROJECT_DIR)/src/TurbulenceModels/compressible/lnInclude/CompressibleTurbulenceModel.H \
 $(WM_PROJECT_DIR)/src/TurbulenceModels/compressible/lnInclude/ThermalDiffusivity.H \
@@ -162,7 +162,7 @@ $(WM_PROJECT_DIR)/src/OSspecific/POSIX/lnInclude/sigSegv.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/argListI.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/scalarRanges.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/wordIOList.H \
-$(WM_PROJECT_DIR)/src/thermophysicalModels/basic/lnInclude/basicThermoTemplates.C \
+/home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/basic/lnInclude/basicThermoTemplates.C \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/primitiveFieldsFwd.H \
 $(WM_PROJECT_DIR)/src/TurbulenceModels/turbulenceModels/lnInclude/TurbulenceModel.H \
 $(WM_PROJECT_DIR)/src/TurbulenceModels/compressible/lnInclude/compressibleTurbulenceModel.H \
@@ -809,7 +809,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Barycentric2D.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Barycentric2DI.H \
 
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvCFD.H :
-$(WM_PROJECT_DIR)/src/thermophysicalModels/basic/lnInclude/fluidThermo.H :
+/home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/basic/lnInclude/fluidThermo.H :
 $(WM_PROJECT_DIR)/src/TurbulenceModels/compressible/lnInclude/turbulentFluidThermoModel.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/simpleControl.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/pressureControl.H :
@@ -848,7 +848,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/constants.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/OSspecific.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/argList.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/timeSelector.H :
-$(WM_PROJECT_DIR)/src/thermophysicalModels/basic/lnInclude/basicThermo.H :
+/home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/basic/lnInclude/basicThermo.H :
 $(WM_PROJECT_DIR)/src/transportModels/compressible/lnInclude/compressibleTransportModel.H :
 $(WM_PROJECT_DIR)/src/TurbulenceModels/compressible/lnInclude/CompressibleTurbulenceModel.H :
 $(WM_PROJECT_DIR)/src/TurbulenceModels/compressible/lnInclude/ThermalDiffusivity.H :
@@ -970,7 +970,7 @@ $(WM_PROJECT_DIR)/src/OSspecific/POSIX/lnInclude/sigSegv.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/argListI.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/scalarRanges.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/wordIOList.H :
-$(WM_PROJECT_DIR)/src/thermophysicalModels/basic/lnInclude/basicThermoTemplates.C :
+/home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/basic/lnInclude/basicThermoTemplates.C :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/primitiveFieldsFwd.H :
 $(WM_PROJECT_DIR)/src/TurbulenceModels/turbulenceModels/lnInclude/TurbulenceModel.H :
 $(WM_PROJECT_DIR)/src/TurbulenceModels/compressible/lnInclude/compressibleTurbulenceModel.H :
