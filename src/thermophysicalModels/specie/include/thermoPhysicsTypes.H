@@ -52,11 +52,26 @@ Description
 #include "hPolynomialThermo.H"
 #include "polynomialTransport.H"
 
+#include "polymerKTransport.H"
+
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 namespace Foam
 {
     // thermo physics types based on sensibleEnthalpy
+    typedef
+    polymerKTransport
+    <
+        species::thermo
+        <
+            hConstThermo
+            <
+                perfectGas<specie> //not really perfectGas
+            >,
+            sensibleEnthalpy
+        >
+    > polymerKHThermoPhysics;
+    
     typedef
     constTransport
     <
