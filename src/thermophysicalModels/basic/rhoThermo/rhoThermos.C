@@ -72,6 +72,30 @@ makeThermos
     pureMixture,
     polymerKTransport,
     sensibleEnthalpy,
+    hConstThermo,
+    rhoConst,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    polymerKTransport,
+    sensibleEnthalpy,
+    hPolymerThermo,
+    rhoConst,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    polymerKTransport,
+    sensibleEnthalpy,
     hPolymerThermo,
     rhoPolymerEOS,
     specie
