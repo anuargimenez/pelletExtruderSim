@@ -85,14 +85,43 @@ class rhoPolymerEOS
 :
     public Specie
 {
+    // Private data
 
+        //- Fluid constant
+        scalar b1m_;
+        scalar b2m_;
+        scalar b3m_;
+        scalar b4m_;
+        scalar b1s_;
+        scalar b2s_;
+        scalar b3s_;
+        scalar b4s_;
+        scalar b5_;
+        scalar b6_;
 public:
 
     // Constructors
 
-        //- Construct from components
-        inline rhoPolymerEOS(const Specie& sp);
+	//- Construct from components
+        inline rhoPolymerEOS
+        (
+            const Specie& sp,
+            const scalar b1m,
+            const scalar b2m,
+            const scalar b3m,
+            const scalar b4m,
+            const scalar b1s,
+            const scalar b2s,
+            const scalar b3s,
+            const scalar b4s,
+            const scalar b5,
+            const scalar b6
 
+        );
+        
+        //- Construct from Istream
+        rhoPolymerEOS(Istream&);
+        
         //- Construct from dictionary
         rhoPolymerEOS(const dictionary& dict);
 
@@ -104,6 +133,9 @@ public:
 
         // Selector from dictionary
         inline static autoPtr<rhoPolymerEOS> New(const dictionary& dict);
+        
+        // Selector from Istream
+        inline static autoPtr<rhoPolymerEOS> New(Istream& is);
 
 
     // Member Functions

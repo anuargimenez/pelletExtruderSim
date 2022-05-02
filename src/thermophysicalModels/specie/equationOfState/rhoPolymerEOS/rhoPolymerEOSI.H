@@ -24,13 +24,37 @@ License
 \*---------------------------------------------------------------------------*/
 
 #include "rhoPolymerEOS.H"
+#include "specie.H"
 
 // * * * * * * * * * * * * * Private Member Functions  * * * * * * * * * * * //
 
 template<class Specie>
-inline Foam::rhoPolymerEOS<Specie>::rhoPolymerEOS(const Specie& sp)
+inline Foam::rhoPolymerEOS<Specie>::rhoPolymerEOS
+(
+    const Specie& sp,
+    const scalar b1m,
+    const scalar b2m,
+    const scalar b3m,
+    const scalar b4m,
+    const scalar b1s,
+    const scalar b2s,
+    const scalar b3s,
+    const scalar b4s,
+    const scalar b5,
+    const scalar b6
+)
 :
-    Specie(sp)
+    Specie(sp),
+    b1m_(b1m),
+    b2m_(b2m),
+    b3m_(b3m),
+    b4m_(b4m),
+    b1s_(b1s),
+    b2s_(b2s),
+    b3s_(b3s),
+    b4s_(b4s),
+    b5_(b5),
+    b6_(b6)
 {}
 
 
@@ -43,7 +67,17 @@ inline Foam::rhoPolymerEOS<Specie>::rhoPolymerEOS
     const rhoPolymerEOS<Specie>& pg
 )
 :
-    Specie(name, pg)
+    Specie(name, pg),
+    b1m_(pf.b1m_),
+    b2m_(pf.b2m_),
+    b3m_(pf.b3m_),
+    b4m_(pf.b4m_),
+    b1s_(pf.b1s_),
+    b2s_(pf.b2s_),
+    b3s_(pf.b3s_),
+    b4s_(pf.b4s_),
+    b5_(pf.b5_),
+    b6_(pf.b6_)
 {}
 
 
@@ -70,7 +104,15 @@ inline Foam::autoPtr<Foam::rhoPolymerEOS<Specie>> Foam::rhoPolymerEOS<Specie>::N
 template<class Specie>
 inline Foam::scalar Foam::rhoPolymerEOS<Specie>::rho(scalar p, scalar T) const
 {
-    return p/(this->R()*T);
+    // old model
+    // return p/(this->R()*T);
+    
+    // TABULATED MODEL
+    // #include "density_Tabulated_Data.H"
+    
+    // TAIT EOS:
+    
+    #include "TaitEOS.H"
 }
 
 
@@ -112,21 +154,42 @@ inline Foam::scalar Foam::rhoPolymerEOS<Specie>::S(scalar p, scalar T) const
 template<class Specie>
 inline Foam::scalar Foam::rhoPolymerEOS<Specie>::psi(scalar p, scalar T) const
 {
-    return 1.0/(this->R()*T);
+    // old model, only for ideal gas
+    // return 1.0/(this->R()*T);
+    
+    // new model
+    
+    return 0.0; 
+    
+    // this is only true if rho(p,T)=rho(T). However, we won´t use psi models in our model
 }
 
 
 template<class Specie>
 inline Foam::scalar Foam::rhoPolymerEOS<Specie>::Z(scalar p, scalar T) const
 {
-    return 1;
+    // old model
+    // return 1.0;
+    
+    // new model
+    
+    return 0.0; 
+    
+    // We won´t use it in our model
 }
 
 
 template<class Specie>
 inline Foam::scalar Foam::rhoPolymerEOS<Specie>::CpMCv(scalar p, scalar T) const
 {
-    return this->R();
+   // old model
+   // return this->R();
+   
+   // new model
+   
+   return 0.0;
+
+   // cpMcv should not be used with the rhoPolymerEOS model
 }
 
 
