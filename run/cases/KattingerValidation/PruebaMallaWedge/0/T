@@ -1,0 +1,59 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2112                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    object      T;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 0 0 1 0 0 0];
+
+internalField   uniform 400; //initial condition
+
+boundaryField
+{
+    wedge1
+    {
+        type            wedge;
+    }
+
+    wedge2
+    {
+        type            wedge;
+    }   
+    
+    wall1
+    {
+        type            fixedValue;
+        value           uniform 513.15; // solo calor en la zona 2
+    }
+
+    wall2
+    {
+        type            fixedValue;
+        value           uniform 513.15; // solo calor en la zona 2
+    }
+    
+    outlet
+    {
+        type            inletOutlet;
+        inletValue      $internalField;
+    }
+
+    inlet
+    {
+        type            fixedValue;
+        value           uniform 298.15; // temperature ambient 25ºC
+    }
+}
+
+
+// ************************************************************************* //
