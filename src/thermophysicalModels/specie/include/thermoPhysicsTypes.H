@@ -53,6 +53,8 @@ Description
 #include "polynomialTransport.H"
 
 #include "polymerKTransport.H"
+#include "hPolymerThermo.H"
+#include "rhoPolymerEOS.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -60,13 +62,13 @@ namespace Foam
 {
     // thermo physics types based on sensibleEnthalpy
     typedef
-    polymerKTransport
+    polymerKTransport // FOR CROSS POWER LAW (NON WLF) VISCOSITY MODEL (SHEAR RATE DEPENDENT, NOT TEMP)
     <
         species::thermo
         <
-            hConstThermo
+            hPolymerThermo
             <
-                perfectGas<specie> //not really perfectGas
+                rhoPolymerEOS<specie>
             >,
             sensibleEnthalpy
         >
