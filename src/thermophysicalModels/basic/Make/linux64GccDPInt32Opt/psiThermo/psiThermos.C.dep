@@ -60,6 +60,7 @@ lnInclude/pureMixture.C \
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/adiabaticPerfectFluid.H \
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/rhoConst.H \
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/icoPolynomial.H \
+/home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerKTransport.H \
 lnInclude/basicThermo.H \
 $(WM_PROJECT_DIR)/src/transportModels/compressible/lnInclude/compressibleTransportModel.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/token.H \
@@ -103,6 +104,8 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvMesh.H \
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/rhoConst.C \
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/icoPolynomialI.H \
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/icoPolynomial.C \
+/home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerKTransportI.H \
+/home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerKTransport.C \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/volFields.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/typeInfo.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOdictionary.H \
@@ -165,6 +168,7 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/slicedVolFieldsFwd.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/slicedSurfaceFieldsFwd.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvMeshTemplates.C \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvPatchFvMeshTemplates.C \
+/home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerK_Data_ThermalConduct.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/GeometricFields.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/volMesh.H \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvPatchField.H \
@@ -647,6 +651,7 @@ lnInclude/pureMixture.C :
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/adiabaticPerfectFluid.H :
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/rhoConst.H :
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/icoPolynomial.H :
+/home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerKTransport.H :
 lnInclude/basicThermo.H :
 $(WM_PROJECT_DIR)/src/transportModels/compressible/lnInclude/compressibleTransportModel.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/token.H :
@@ -690,6 +695,8 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvMesh.H :
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/rhoConst.C :
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/icoPolynomialI.H :
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/icoPolynomial.C :
+/home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerKTransportI.H :
+/home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerKTransport.C :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/volFields.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/typeInfo.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IOdictionary.H :
@@ -752,6 +759,7 @@ $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/slicedVolFieldsFwd.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/slicedSurfaceFieldsFwd.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvMeshTemplates.C :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvPatchFvMeshTemplates.C :
+/home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerK_Data_ThermalConduct.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/GeometricFields.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/volMesh.H :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvPatchField.H :
