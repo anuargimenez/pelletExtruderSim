@@ -163,6 +163,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/DLList.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/ITstream.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/wordList.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dictionaryTemplates.C \
+lnInclude/polymerK_Data_ThermalConduct.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/hashedWordListI.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/HashTableI.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/HashTable.C \
@@ -482,6 +483,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/DLList.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/ITstream.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/wordList.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dictionaryTemplates.C :
+lnInclude/polymerK_Data_ThermalConduct.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/hashedWordListI.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/HashTableI.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/HashTable.C :

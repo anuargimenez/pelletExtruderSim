@@ -97,7 +97,11 @@ inline Foam::scalar Foam::polymerKTransport<Thermo>::kappa
     const scalar T
 ) const
 {
-    return this->Cp(p, T)*mu(p, T)*rPr_;
+   // Old version: 
+   // return this->Cp(p, T)*mu(p, T)*rPr_;
+   
+   //Thermal conductivity changed from constant to tabulated data table:
+   #include "polymerK_Data_ThermalConduct.H"
 }
 
 
@@ -108,7 +112,16 @@ inline Foam::scalar Foam::polymerKTransport<Thermo>::alphah
     const scalar T
 ) const
 {
-    return mu(p, T)*rPr_;
+// ORIGINAL VERSION Pr constant:
+    // return mu(p, T)*rPr_;
+    
+    // NEW VERSION FOR POLYMER Pr not constant:
+    // Pr = mu(p,T)*Cp(p,T)/kappa(p,T)
+    // alpha = kappa(p,T)/cp(p,T)*rho(p,T) = kappa(p,T)/Cp(p,T)
+    
+    return kappa(p,T)/this->Cpv(p,T);
+    
+    // end of alpha version implemented for polymer
 }
 
 

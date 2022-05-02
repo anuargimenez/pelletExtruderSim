@@ -160,6 +160,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IDLList.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/DLList.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/ITstream.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dictionaryTemplates.C \
+lnInclude/polymerK_Data_ThermalConduct.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/tmpI.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/List.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/UPstream.H \
@@ -457,6 +458,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IDLList.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/DLList.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/ITstream.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dictionaryTemplates.C :
+lnInclude/polymerK_Data_ThermalConduct.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/tmpI.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/List.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/UPstream.H :
