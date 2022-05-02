@@ -68,16 +68,16 @@ inline Foam::rhoPolymerEOS<Specie>::rhoPolymerEOS
 )
 :
     Specie(name, pg),
-    b1m_(pf.b1m_),
-    b2m_(pf.b2m_),
-    b3m_(pf.b3m_),
-    b4m_(pf.b4m_),
-    b1s_(pf.b1s_),
-    b2s_(pf.b2s_),
-    b3s_(pf.b3s_),
-    b4s_(pf.b4s_),
-    b5_(pf.b5_),
-    b6_(pf.b6_)
+    b1m_(pg.b1m_),
+    b2m_(pg.b2m_),
+    b3m_(pg.b3m_),
+    b4m_(pg.b4m_),
+    b1s_(pg.b1s_),
+    b2s_(pg.b2s_),
+    b3s_(pg.b3s_),
+    b4s_(pg.b4s_),
+    b5_(pg.b5_),
+    b6_(pg.b6_)
 {}
 
 

@@ -95,7 +95,12 @@ inline Foam::scalar Foam::hPolymerThermo<EquationOfState>::Cp
     const scalar T
 ) const
 {
-    return Cp_ + EquationOfState::Cp(p, T);
+   // original model
+   // return Cp_ + EquationOfState::Cp(p, T);
+   
+   // new model:
+   
+   #include "cp_Data_Polymer.H"
 }
 
 
@@ -105,14 +110,22 @@ inline Foam::scalar Foam::hPolymerThermo<EquationOfState>::Hs
     const scalar p, const scalar T
 ) const
 {
-    return Cp_*T + EquationOfState::H(p, T);
+   // original model
+   // return Cp_*(T - Tref_) + Hsref_ + EquationOfState::H(p, T);
+   
+   // new model:
+   
+   return Ha(p, T);
 }
 
 
 template<class EquationOfState>
 inline Foam::scalar Foam::hPolymerThermo<EquationOfState>::Hc() const
 {
-    return Hf_;
+   // original model
+   // return Hf_;
+   
+   return 0.0;
 }
 
 
@@ -122,7 +135,12 @@ inline Foam::scalar Foam::hPolymerThermo<EquationOfState>::Ha
     const scalar p, const scalar T
 ) const
 {
-    return Hs(p, T) + Hc();
+   // original model
+   // return Hs(p, T) + Hc();
+   
+   // new model:
+   
+   #include "h_Data_Polymer.H"
 }
 
 

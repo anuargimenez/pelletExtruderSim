@@ -94,16 +94,16 @@ template<class Specie>
 Foam::Ostream& Foam::operator<<(Ostream& os, const rhoPolymerEOS<Specie>& pg)
 {
     os  << static_cast<const Specie&>(pg)
-        << token::SPACE << pf.b1m_
-        << token::SPACE << pf.b2m_
-        << token::SPACE << pf.b3m_
-        << token::SPACE << pf.b4m_
-        << token::SPACE << pf.b1s_
-        << token::SPACE << pf.b2s_
-        << token::SPACE << pf.b3s_
-        << token::SPACE << pf.b4s_
-        << token::SPACE << pf.b5_
-        << token::SPACE << pf.b6_;
+        << token::SPACE << pg.b1m_
+        << token::SPACE << pg.b2m_
+        << token::SPACE << pg.b3m_
+        << token::SPACE << pg.b4m_
+        << token::SPACE << pg.b1s_
+        << token::SPACE << pg.b2s_
+        << token::SPACE << pg.b3s_
+        << token::SPACE << pg.b4s_
+        << token::SPACE << pg.b5_
+        << token::SPACE << pg.b6_;
 
 
     os.check("Ostream& operator<<(Ostream&, const rhoPolymerEOS<Specie>&)");
