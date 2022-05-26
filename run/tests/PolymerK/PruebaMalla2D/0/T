@@ -16,7 +16,7 @@ FoamFile
 
 dimensions      [0 0 0 1 0 0 0];
 
-internalField   uniform 500; //initial condition
+internalField   uniform 405.65; //initial condition
 
 boundaryField
 {
@@ -44,8 +44,7 @@ boundaryField
     
     output
     {
-        type            inletOutlet;
-        inletValue      $internalField;
+        type            zeroGradient;
     }
 
     input
