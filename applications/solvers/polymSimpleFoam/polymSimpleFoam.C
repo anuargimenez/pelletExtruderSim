@@ -48,6 +48,7 @@ int main(int argc, char *argv[])
     #include "createControl.H"
     #include "createFields.H"
     #include "createFieldRefs.H"
+    #include "CourantNo.H"
     #include "initContinuityErrs.H"
 
     turbulence->validate();
@@ -59,6 +60,8 @@ int main(int argc, char *argv[])
     while (simple.loop(runTime))
     {
         Info<< "Time = " << runTime.timeName() << nl << endl;
+        
+        #include "CourantNo.H" // Calculates and outputs Courant Number
 
         // Pressure-velocity SIMPLE corrector
         #include "UEqn.H"

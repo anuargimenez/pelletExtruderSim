@@ -89,7 +89,7 @@ inline Foam::scalar Foam::hPolymerThermo<EquationOfState>::limit
 
 
 template<class EquationOfState>
-inline Foam::scalar Foam::hPolymerThermo<EquationOfState>::Cp
+inline Foam::scalar Foam::hPolymerThermo<EquationOfState>::Cp   //- Heat capacity at constant pressure [J/kg/K]
 (
     const scalar p,
     const scalar T
@@ -98,14 +98,13 @@ inline Foam::scalar Foam::hPolymerThermo<EquationOfState>::Cp
    // original model
    // return Cp_ + EquationOfState::Cp(p, T);
    
-   // new model:
-   
+   // new model with cp tabulated:
    #include "cp_Data_Polymer.H"
 }
 
 
 template<class EquationOfState>
-inline Foam::scalar Foam::hPolymerThermo<EquationOfState>::Hs
+inline Foam::scalar Foam::hPolymerThermo<EquationOfState>::Hs //- Sensible enthalpy [J/kg]
 (
     const scalar p, const scalar T
 ) const
@@ -120,7 +119,7 @@ inline Foam::scalar Foam::hPolymerThermo<EquationOfState>::Hs
 
 
 template<class EquationOfState>
-inline Foam::scalar Foam::hPolymerThermo<EquationOfState>::Hc() const
+inline Foam::scalar Foam::hPolymerThermo<EquationOfState>::Hc() const  //- Chemical enthalpy [J/kg]
 {
    // original model
    // return Hf_;
@@ -130,7 +129,7 @@ inline Foam::scalar Foam::hPolymerThermo<EquationOfState>::Hc() const
 
 
 template<class EquationOfState>
-inline Foam::scalar Foam::hPolymerThermo<EquationOfState>::Ha
+inline Foam::scalar Foam::hPolymerThermo<EquationOfState>::Ha  //- Absolute Enthalpy [J/kg]
 (
     const scalar p, const scalar T
 ) const
@@ -139,7 +138,6 @@ inline Foam::scalar Foam::hPolymerThermo<EquationOfState>::Ha
    // return Hs(p, T) + Hc();
    
    // new model:
-   
    #include "h_Data_Polymer.H"
 }
 

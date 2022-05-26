@@ -1,15 +1,16 @@
 Info<< "Reading thermophysical properties\n" << endl;
 
-autoPtr<fluidThermo> pThermo
+autoPtr<fluidThermo> pThermo //create the object "thermo"
 (
     fluidThermo::New(mesh)
 );
 fluidThermo& thermo = pThermo();
+
 thermo.validate(args.executable(), "h", "e");
 
 volScalarField& p = thermo.p();
 
-volScalarField rho
+volScalarField rho //create scalar field rho
 (
     IOobject
     (
@@ -22,7 +23,7 @@ volScalarField rho
     thermo.rho()
 );
 
-Info<< "Reading field U\n" << endl;
+Info<< "Reading field U\n" << endl; //create vector field U
 volVectorField U
 (
     IOobject
@@ -36,14 +37,14 @@ volVectorField U
     mesh
 );
 
-#include "compressibleCreatePhi.H"
+#include "compressibleCreatePhi.H" //creates and initializes the relative face-flux field phi
 
 pressureControl pressureControl(p, rho, simple.dict());
 
 mesh.setFluxRequired(p.name());
 
-Info<< "Creating turbulence model\n" << endl;
-autoPtr<compressible::turbulenceModel> turbulence
+Info<< "Creating turbulence model\n" << endl; 
+autoPtr<compressible::turbulenceModel> turbulence //turbulence model is created  --> Foam::compressible::turbulenceModel  steckt in turbulentFluidThermoModel.H
 (
     compressible::turbulenceModel::New
     (

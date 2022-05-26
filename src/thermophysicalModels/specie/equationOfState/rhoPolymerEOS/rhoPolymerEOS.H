@@ -87,7 +87,7 @@ class rhoPolymerEOS
 {
     // Private data
 
-        //- Fluid constant
+        //- Tait coefficients
         scalar b1m_;
         scalar b2m_;
         scalar b3m_;

@@ -1,6 +1,6 @@
 // Density [kg/m3] (specific volume m3/kg) function of T and P, for PS
 
-// TAIT EQ. OF STATE
+// TAIT EQ. OF STATE for amorphous polymers:
     scalar spec_volS;
     scalar spec_volM;
 
@@ -17,15 +17,15 @@
     scalar Tp = Tt + Td; //upper band limit
     scalar Tm = Tt - Td; //lower band limit
 
-    if ( T > Tp )//melt
+    if ( T > Tp ) // melt
     {
         return 1.0/spec_volM;
     }
-    else if ( T > Tm)
+    else if ( T > Tm) // interpolated transition region
     {
         return 1.0/((T-Tm)/(Tp-Tm) * spec_volM + (Tp-T)/(Tp-Tm) * spec_volS);
     }
-    else
+    else // solid
     {
         return 1.0/spec_volS;
     }

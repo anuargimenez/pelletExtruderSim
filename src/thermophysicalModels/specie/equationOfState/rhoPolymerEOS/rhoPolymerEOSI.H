@@ -104,29 +104,29 @@ inline Foam::autoPtr<Foam::rhoPolymerEOS<Specie>> Foam::rhoPolymerEOS<Specie>::N
 template<class Specie>
 inline Foam::scalar Foam::rhoPolymerEOS<Specie>::rho(scalar p, scalar T) const
 {
-    // old model
+    // OLD MODEL:
     // return p/(this->R()*T);
     
-    // TABULATED MODEL
+    // TABULATED MODEL:
     // #include "density_Tabulated_Data.H"
     
     // TAIT EOS:
-    
     #include "TaitEOS.H"
 }
 
 
 template<class Specie>
-inline Foam::scalar Foam::rhoPolymerEOS<Specie>::H(scalar p, scalar T) const
+inline Foam::scalar Foam::rhoPolymerEOS<Specie>::H(scalar p, scalar T) const // Enthalpy
 {
-    return 0;
+    // THERMODYNAMICS LAW: H = U + p/rho
+    return p/(this->rho(p, T));
 }
 
 
 template<class Specie>
 inline Foam::scalar Foam::rhoPolymerEOS<Specie>::Cp(scalar p, scalar T) const
 {
-    return 0;
+    return 0; // Specific Heat Cp tabulated in hPolymer
 }
 
 

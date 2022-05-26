@@ -7,8 +7,8 @@
     scalar T0=297.95;
     scalar Temp_PS;
 
-   /* check that T is within the tabulation range
-    if (T> 523.15 || T<297.95)
+   // check that T is within a physical range
+    if (T>750 || T<273.15)
       {
           FatalErrorIn
           (
@@ -17,10 +17,10 @@
           )   << " T_kappa="<<T<<"; "
               << abort(FatalError);
       }
-    */
+   
 
    // Thermal conductivity kappa [W/(m.K)] , PS :
-   // data table from J.Kattinger et al. (2022), Stuttgart.
+   // data table extracted from J.Kattinger et al. (2022), Stuttgart.
 
     scalar kappa_PS[43]=
        {
@@ -39,7 +39,8 @@
         
     
    // linear interpolation to calculate kappa(T) W/(m.K)
-     
+   
+   // To avoid segmentation errors:     
       i_index = int(floor(fabs((T-T0)/dT)));
       
            if ( i_index > 42)
@@ -51,7 +52,7 @@
       kappa_T_PS = kappa_PS[i_index]
                     + (kappa_PS[i_index+1]-kappa_PS[i_index])*(T-Temp_PS)/dT;
 
-   //to avoid limit errors
+   //to avoid temperature limit errors
       if ( T > T0 + (dT*42))
     {
         return kappa_PS[42];

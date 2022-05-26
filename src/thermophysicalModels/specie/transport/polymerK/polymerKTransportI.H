@@ -80,7 +80,7 @@ Foam::polymerKTransport<Thermo>::New
 // * * * * * * * * * * * * * * * Member Functions  * * * * * * * * * * * * * //
 
 template<class Thermo>
-inline Foam::scalar Foam::polymerKTransport<Thermo>::mu
+inline Foam::scalar Foam::polymerKTransport<Thermo>::mu  //- Constant dynamic viscosity [kg/m/s]
 (
     const scalar p,
     const scalar T
@@ -91,7 +91,7 @@ inline Foam::scalar Foam::polymerKTransport<Thermo>::mu
 
 
 template<class Thermo>
-inline Foam::scalar Foam::polymerKTransport<Thermo>::kappa
+inline Foam::scalar Foam::polymerKTransport<Thermo>::kappa //- Thermal conductivity [W/m/K] --> tabulated
 (
     const scalar p,
     const scalar T
@@ -106,7 +106,7 @@ inline Foam::scalar Foam::polymerKTransport<Thermo>::kappa
 
 
 template<class Thermo>
-inline Foam::scalar Foam::polymerKTransport<Thermo>::alphah
+inline Foam::scalar Foam::polymerKTransport<Thermo>::alphah  //- Thermal diffusivity of enthalpy [kg/m/s]
 (
     const scalar p,
     const scalar T
@@ -119,7 +119,7 @@ inline Foam::scalar Foam::polymerKTransport<Thermo>::alphah
     // Pr = mu(p,T)*Cp(p,T)/kappa(p,T)
     // alpha = kappa(p,T)/cp(p,T)*rho(p,T) = kappa(p,T)/Cp(p,T)
     
-    return kappa(p,T)/this->Cpv(p,T);
+    return kappa(p,T)/this->Cp(p,T);
     
     // end of alpha version implemented for polymer
 }
