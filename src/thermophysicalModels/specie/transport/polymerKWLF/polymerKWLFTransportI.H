@@ -121,7 +121,7 @@ inline Foam::scalar Foam::polymerKWLFTransport<Thermo>::kappa //- Thermal conduc
    // return this->Cp(p, T)*mu(p, T)*rPr_;
    
    //Thermal conductivity changed from constant to tabulated data table:
-   #include "polymerK_Data_ThermalConduct.H"
+   #include "polymerKWLF_Data_ThermalConduct.H"
 }
 
 

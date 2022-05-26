@@ -60,9 +60,6 @@ lnInclude/eConstThermo.H \
 lnInclude/sensibleEnthalpy.H \
 lnInclude/sensibleInternalEnergy.H \
 lnInclude/constTransport.H \
-lnInclude/polymerKTransport.H \
-lnInclude/hPolymerThermo.H \
-lnInclude/rhoPolymerEOS.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Field.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/FieldFunctionsM.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/undefFieldFunctionsM.H \
@@ -109,12 +106,6 @@ lnInclude/eConstThermoI.H \
 lnInclude/eConstThermo.C \
 lnInclude/constTransportI.H \
 lnInclude/constTransport.C \
-lnInclude/polymerKTransportI.H \
-lnInclude/polymerKTransport.C \
-lnInclude/hPolymerThermoI.H \
-lnInclude/hPolymerThermo.C \
-lnInclude/rhoPolymerEOSI.H \
-lnInclude/rhoPolymerEOS.C \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/tmp.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/direction.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/scalarList.H \
@@ -166,10 +157,6 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IDLList.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/DLList.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/ITstream.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dictionaryTemplates.C \
-lnInclude/polymerK_Data_ThermalConduct.H \
-lnInclude/cp_Data_Polymer.H \
-lnInclude/h_Data_Polymer.H \
-lnInclude/TaitEOS.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/tmpI.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/List.H \
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/UPstream.H \
@@ -367,9 +354,6 @@ lnInclude/eConstThermo.H :
 lnInclude/sensibleEnthalpy.H :
 lnInclude/sensibleInternalEnergy.H :
 lnInclude/constTransport.H :
-lnInclude/polymerKTransport.H :
-lnInclude/hPolymerThermo.H :
-lnInclude/rhoPolymerEOS.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Field.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/FieldFunctionsM.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/undefFieldFunctionsM.H :
@@ -416,12 +400,6 @@ lnInclude/eConstThermoI.H :
 lnInclude/eConstThermo.C :
 lnInclude/constTransportI.H :
 lnInclude/constTransport.C :
-lnInclude/polymerKTransportI.H :
-lnInclude/polymerKTransport.C :
-lnInclude/hPolymerThermoI.H :
-lnInclude/hPolymerThermo.C :
-lnInclude/rhoPolymerEOSI.H :
-lnInclude/rhoPolymerEOS.C :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/tmp.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/direction.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/scalarList.H :
@@ -473,10 +451,6 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/IDLList.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/DLList.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/ITstream.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/dictionaryTemplates.C :
-lnInclude/polymerK_Data_ThermalConduct.H :
-lnInclude/cp_Data_Polymer.H :
-lnInclude/h_Data_Polymer.H :
-lnInclude/TaitEOS.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/tmpI.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/List.H :
 $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/UPstream.H :
