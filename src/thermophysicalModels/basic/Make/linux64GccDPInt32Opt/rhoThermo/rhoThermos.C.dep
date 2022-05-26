@@ -25,6 +25,7 @@ lnInclude/makeThermo.H \
 lnInclude/heRhoThermo.H \
 lnInclude/pureMixture.H \
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerKTransport.H \
+/home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerKWLFTransport.H \
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/rhoPolymerEOS.H \
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/hPolymerThermo.H \
 lnInclude/fluidThermo.H \
@@ -80,6 +81,8 @@ lnInclude/basicMixture.H \
 lnInclude/pureMixture.C \
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerKTransportI.H \
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerKTransport.C \
+/home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerKWLFTransportI.H \
+/home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerKWLFTransport.C \
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/rhoPolymerEOSI.H \
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/rhoPolymerEOS.C \
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/hPolymerThermoI.H \
@@ -118,6 +121,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/PolynomialIO.C \
 lnInclude/heThermo.C \
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvMesh.H \
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerK_Data_ThermalConduct.H \
+/home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerKWLF_Data_ThermalConduct.H \
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/TaitEOS.H \
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/cp_Data_Polymer.H \
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/h_Data_Polymer.H \
@@ -630,6 +634,7 @@ lnInclude/makeThermo.H :
 lnInclude/heRhoThermo.H :
 lnInclude/pureMixture.H :
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerKTransport.H :
+/home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerKWLFTransport.H :
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/rhoPolymerEOS.H :
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/hPolymerThermo.H :
 lnInclude/fluidThermo.H :
@@ -685,6 +690,8 @@ lnInclude/basicMixture.H :
 lnInclude/pureMixture.C :
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerKTransportI.H :
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerKTransport.C :
+/home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerKWLFTransportI.H :
+/home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerKWLFTransport.C :
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/rhoPolymerEOSI.H :
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/rhoPolymerEOS.C :
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/hPolymerThermoI.H :
@@ -723,6 +730,7 @@ $(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/PolynomialIO.C :
 lnInclude/heThermo.C :
 $(WM_PROJECT_DIR)/src/finiteVolume/lnInclude/fvMesh.H :
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerK_Data_ThermalConduct.H :
+/home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/polymerKWLF_Data_ThermalConduct.H :
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/TaitEOS.H :
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/cp_Data_Polymer.H :
 /home/anuar/OpenFOAM/anuar-7/src/thermophysicalModels/specie/lnInclude/h_Data_Polymer.H :

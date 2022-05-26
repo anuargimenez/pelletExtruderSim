@@ -16,7 +16,7 @@ FoamFile
 
 dimensions      [1 -1 -2 0 0 0 0];
 
-internalField   uniform 100000;
+internalField   uniform 1e5;
 
 boundaryField
 {
@@ -32,18 +32,20 @@ boundaryField
     
     wall1
     {
-        type            zeroGradient;
+        type            fixedFluxPressure;
+        value           uniform 0;
     }
     
     wall2
     {
-        type            zeroGradient;
+        type            fixedFluxPressure;
+        value           uniform 0;
     }
     
     output
     {
         type            fixedValue;
-        value           uniform 100000;
+        value           uniform 1e5;
     }
     input
     {

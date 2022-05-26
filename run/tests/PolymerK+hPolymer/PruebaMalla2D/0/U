@@ -42,9 +42,7 @@ boundaryField
     
     output
     {
-        type            inletOutlet;
-        inletValue      $internalField;
-        value           $internalField;
+        type            zeroGradient;
     }
 
     input
@@ -54,7 +52,7 @@ boundaryField
         rho             rho;
         //rhoInlet        1000;    // Guess for rho */
        type		fixedValue;
-       value		uniform (0 0 0.0005);
+       value		uniform (0 0 0.0002);
     }
 }
 

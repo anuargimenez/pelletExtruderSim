@@ -14,6 +14,7 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
+// Temperature dependnt K, H and Cp constant, rho constant. 
 thermoType
 {
     type            heRhoThermo;
@@ -29,12 +30,13 @@ mixture
 {
     specie
     {
-        molWeight   150;
+	nMoles	    1;	//irrelevant
+	molWeight   1;	//Value necessary but irrelevant for the calculation as there is no mixture
     }
     thermodynamics
     {
-        Cp          0;
-        Hf          0;
+        Cp          0; //Not needed. Cp(T) tabulated.
+        Hf          0; //Heat of Fusion, irrelevant as there is no mixture
     }
     transport
     {
@@ -42,17 +44,17 @@ mixture
         Pr          116;
     }
      
-equationOfState // Tait EOS Coefficients (PS-Polystyrene)
-    {
-        b1m         0.000991;
-        b2m         7.629e-7;
-        b3m         1e+8;
-        b4m         0.00494;
-        b1s         0.0009969;
-        b2s         3.791e-7;
-        b3s         9e+7;
-        b4s         0.004677;
-        b5          362.15;
+    equationOfState
+    {		
+        b1m         0.0009978;
+        b2m         7.5078e-7;
+        b3m         6.9934e8;
+        b4m         0.0029;
+        b1s         0.0009978;
+        b2s         3.3782e-7;
+        b3s         9.9809e8;
+        b4s         0.00012152;
+        b5          362.15;			
         b6          1e-7;
     }
 }

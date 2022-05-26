@@ -54,6 +54,7 @@ License
 #include "pureMixture.H"
 
 #include "polymerKTransport.H"
+#include "polymerKWLFTransport.H"
 #include "rhoPolymerEOS.H"
 #include "hPolymerThermo.H"
 
@@ -95,6 +96,18 @@ makeThermos
     heRhoThermo,
     pureMixture,
     polymerKTransport,
+    sensibleEnthalpy,
+    hPolymerThermo,
+    rhoPolymerEOS,
+    specie
+);
+
+makeThermos
+(
+    rhoThermo,
+    heRhoThermo,
+    pureMixture,
+    polymerKWLFTransport,
     sensibleEnthalpy,
     hPolymerThermo,
     rhoPolymerEOS,
