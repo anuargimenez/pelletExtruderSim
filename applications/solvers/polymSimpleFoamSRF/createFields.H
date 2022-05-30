@@ -23,7 +23,7 @@ volScalarField rho //create scalar field rho
     thermo.rho()
 );
 
-Info<< "Reading field Urel\n" << endl; //create vector field U
+Info<< "Reading field Urel\n" << endl; //create vector field Urel
 volVectorField Urel
 (
     IOobject
