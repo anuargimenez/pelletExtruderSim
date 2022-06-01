@@ -1,0 +1,94 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      binary;
+    class       volScalarField;
+    location    "0";
+    object      p;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [1 -1 -2 0 0 0 0];
+
+internalField   uniform 100000;
+
+boundaryField
+{
+    barrelup
+    {
+        type            fixedFluxPressure;
+        gradient        uniform 0;
+        value           uniform 100000;
+    }
+    barreldown-component-fluido_en_interior3_layerdown
+    {
+        type            fixedFluxPressure;
+        gradient        uniform 0;
+        value           uniform 100000;
+    }
+    barreldown-component-fluido_en_interior4_fluiddown
+    {
+        type            fixedFluxPressure;
+        gradient        nonuniform 
+0
+;
+        value           nonuniform 
+0
+;
+    }
+    screwup-component-fluido_en_interior1_fluidscrewup
+    {
+        type            fixedFluxPressure;
+        gradient        uniform 0;
+        value           uniform 100000;
+    }
+    screwup-component-fluido_en_interior2_layerup
+    {
+        type            fixedFluxPressure;
+        gradient        uniform 0;
+        value           uniform 100000;
+    }
+    screwdown-component-fluido_en_interior3_layerdown
+    {
+        type            fixedFluxPressure;
+        gradient        uniform 0;
+        value           uniform 100000;
+    }
+    screwdown-component-fluido_en_interior5_fluidscrewdown
+    {
+        type            fixedFluxPressure;
+        gradient        uniform 0;
+        value           uniform 100000;
+    }
+    inlet
+    {
+        type            zeroGradient;
+    }
+    outlet
+    {
+        type            fixedValue;
+        value           nonuniform 
+0
+;
+    }
+    procBoundary2to1
+    {
+        type            processor;
+        value           uniform 100000;
+    }
+    procBoundary2to3
+    {
+        type            processor;
+        value           uniform 100000;
+    }
+}
+
+
+// ************************************************************************* //

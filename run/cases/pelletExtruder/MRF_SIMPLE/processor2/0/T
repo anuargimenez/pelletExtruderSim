@@ -1,0 +1,89 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      binary;
+    class       volScalarField;
+    location    "0";
+    object      T;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 0 0 1 0 0 0];
+
+internalField   uniform 405.65;
+
+boundaryField
+{
+    barrelup
+    {
+        type            convectiveRadiativeHeatFlux;
+        mode            convectiveRadiative;
+        Ta              constant 513.15;
+        h               uniform 215;
+        emissivityNozzle 0.95;
+        emissivityFilament 0.95;
+        dNozzle         4;
+        dFilament       1.75;
+        kappaMethod     fluidThermo;
+        value           uniform 405.65;
+    }
+    barreldown-component-fluido_en_interior3_layerdown
+    {
+        type            fixedValue;
+        value           uniform 513.15;
+    }
+    barreldown-component-fluido_en_interior4_fluiddown
+    {
+        type            fixedValue;
+        value           nonuniform 
+0
+;
+    }
+    screwup-component-fluido_en_interior1_fluidscrewup
+    {
+        type            zeroGradient;
+    }
+    screwup-component-fluido_en_interior2_layerup
+    {
+        type            zeroGradient;
+    }
+    screwdown-component-fluido_en_interior3_layerdown
+    {
+        type            zeroGradient;
+    }
+    screwdown-component-fluido_en_interior5_fluidscrewdown
+    {
+        type            zeroGradient;
+    }
+    inlet
+    {
+        type            fixedValue;
+        value           nonuniform 
+0
+;
+    }
+    outlet
+    {
+        type            zeroGradient;
+    }
+    procBoundary2to1
+    {
+        type            processor;
+        value           uniform 405.65;
+    }
+    procBoundary2to3
+    {
+        type            processor;
+        value           uniform 405.65;
+    }
+}
+
+
+// ************************************************************************* //

@@ -1,0 +1,101 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-3bcbaf946ae9
+Exec   : polymPimpleFoam -parallel
+Date   : Jun 01 2022
+Time   : 18:42:08
+Host   : "calculus"
+PID    : 292931
+I/O    : uncollated
+Case   : /home/andres/OpenFOAM/andres-7/run/cases/pelletExtruder/MRF_PIMPLE
+nProcs : 6
+Slaves : 
+5
+(
+"calculus.292932"
+"calculus.292933"
+"calculus.292934"
+"calculus.292935"
+"calculus.292936"
+)
+
+Pstream initialized with:
+    floatTransfer      : 0
+    nProcsSimpleSum    : 0
+    commsType          : nonBlocking
+    polling iterations : 0
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+
+PIMPLE: Convergence criteria found
+        "p.*": tolerance 1e-06
+        "U.*": tolerance 1e-05
+        "h.*": tolerance 1e-07
+
+
+PIMPLE: Operating solver in steady-state mode with 1 outer corrector
+PIMPLE: Operating solver in SIMPLE mode
+
+
+Reading thermophysical properties
+
+Selecting thermodynamics package 
+{
+    type            heRhoThermo;
+    mixture         pureMixture;
+    transport       polymerKWLF;
+    thermo          hPolymer;
+    equationOfState rhoPolymerEOS;
+    specie          specie;
+    energy          sensibleEnthalpy;
+}
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Creating turbulence model
+
+Selecting turbulence model type laminar
+Selecting laminar stress model generalizedNewtonian
+Selecting generalized Newtonian model CrossPowerLaw
+Creating field dpdt
+
+Creating field kinetic energy K
+
+Creating MRF zone list from MRFProperties
+    creating MRF zone: MRF1
+Creating finite volume options from "constant/fvOptions"
+
+Selecting finite volume options model type limitTemperature
+    Source: limitT
+    - selecting all cells
+    - selected 405857 cell(s) with volume 1.04047e-06
+Courant Number mean: 0 max: 0
+
+Starting time loop
+
+
+
+Courant Number mean: 0 max: 0
+Time = 1e-07
+
+smoothSolver:  Solving for Ux, Initial residual = 1, Final residual = 0.00416441, No Iterations 2
+smoothSolver:  Solving for Uy, Initial residual = 1, Final residual = 6.9022e-05, No Iterations 1
+smoothSolver:  Solving for Uz, Initial residual = 1, Final residual = 0.00423101, No Iterations 2
+smoothSolver:  Solving for h, Initial residual = 1, Final residual = 0.00793078, No Iterations 2
+GAMG:  Solving for p, Initial residual = 1, Final residual = 0.00997803, No Iterations 6
+GAMG:  Solving for p, Initial residual = 0.509169, Final residual = 0.00300957, No Iterations 3
+GAMG:  Solving for p, Initial residual = 0.0730962, Final residual = 0.000534121, No Iterations 5

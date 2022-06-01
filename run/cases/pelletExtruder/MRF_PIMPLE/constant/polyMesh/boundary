@@ -1,0 +1,97 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      binary;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+11
+(
+    wall-component-fluido_en_interior3_layerdown
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          106;
+        startFace       775631;
+    }
+    wall-component-fluido_en_interior2_layerup
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          494;
+        startFace       775737;
+    }
+    barrelup
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          13001;
+        startFace       776231;
+    }
+    barreldown-component-fluido_en_interior3_layerdown
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          7358;
+        startFace       789232;
+    }
+    barreldown-component-fluido_en_interior4_fluiddown
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          2998;
+        startFace       796590;
+    }
+    screwup-component-fluido_en_interior1_fluidscrewup
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          26507;
+        startFace       799588;
+    }
+    screwup-component-fluido_en_interior2_layerup
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          4341;
+        startFace       826095;
+    }
+    screwdown-component-fluido_en_interior5_fluidscrewdown
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          13134;
+        startFace       830436;
+    }
+    screwdown-component-fluido_en_interior3_layerdown
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          2429;
+        startFace       843570;
+    }
+    inlet
+    {
+        type            patch;
+        nFaces          1728;
+        startFace       845999;
+    }
+    outlet
+    {
+        type            patch;
+        nFaces          70;
+        startFace       847727;
+    }
+)
+
+// ************************************************************************* //

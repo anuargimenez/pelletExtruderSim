@@ -1,0 +1,203 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-3bcbaf946ae9
+Exec   : fluentMeshToFoam MRF_Pellet_Extruder.msh
+Date   : Jun 01 2022
+Time   : 18:35:05
+Host   : "calculus"
+PID    : 290833
+I/O    : uncollated
+Case   : /home/andres/OpenFOAM/andres-7/run/cases/pelletExtruder/MRF_PIMPLE
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Embedded blocks in comment or unknown:       (
+Embedded blocks in comment or unknown:(
+Found end of section in unknown:) 
+Embedded blocks in comment or unknown:(
+Found end of section in unknown:)
+Found end of section in unknown:)
+Embedded blocks in comment or unknown:       (
+Embedded blocks in comment or unknown:(
+Found end of section in unknown:)
+Embedded blocks in comment or unknown:
+                (
+Found end of section in unknown:)
+Found end of section in unknown:)
+Embedded blocks in comment or unknown:       (
+Embedded blocks in comment or unknown:(
+Found end of section in unknown:)
+Found end of section in unknown:)
+Embedded blocks in comment or unknown: (
+Embedded blocks in comment or unknown:(
+Found end of section in unknown:) 
+Embedded blocks in comment or unknown:(
+Found end of section in unknown:)
+Found end of section in unknown:)
+Dimension of grid: 3
+Number of points: 86043
+
+number of faces: 847797
+Number of cells: 405857
+Reading points
+Reading points
+Reading uniform faces
+Reading uniform faces
+Reading uniform faces
+Reading uniform faces
+Reading uniform faces
+Reading uniform faces
+Reading uniform faces
+Reading uniform faces
+Reading uniform faces
+Reading uniform faces
+Reading uniform faces
+Reading uniform faces
+Reading uniform faces
+Reading uniform faces
+Reading uniform faces
+Reading uniform faces
+Reading uniform faces
+Reading uniform faces
+Reading uniform faces
+Reading uniform faces
+Reading uniform faces
+Reading uniform faces
+Other readCellGroupData: e 1 18984 1 2
+Reading uniform cells
+Other readCellGroupData: f 18985 4e49b 1 2
+Reading uniform cells
+Other readCellGroupData: 10 4e49c 53de3 1 2
+Reading uniform cells
+Other readCellGroupData: 11 53de4 5959a 1 2
+Reading uniform cells
+Other readCellGroupData: 12 5959b 63161 1 2
+Reading uniform cells
+Read zone1:1 name:wall-component-fluido_en_interior3_layerdown patchTypeID:wall
+Reading zone data
+Read zone1:2 name:wall-component-fluido_en_interior2_layerup patchTypeID:wall
+Reading zone data
+Read zone1:3 name:interior-component-fluido_en_interior2_layerup-component-fluido_en_interior3_layerdown patchTypeID:interior
+Reading zone data
+Read zone1:4 name:interior-component-fluido_en_interior1_fluidscrewup-component-fluido_en_interior2_layerup patchTypeID:interior
+Reading zone data
+Read zone1:5 name:interior-component-fluido_en_interior4_fluiddown-component-fluido_en_interior5_fluidscrewdown patchTypeID:interior
+Reading zone data
+Read zone1:6 name:interior-component-fluido_en_interior3_layerdown-component-fluido_en_interior5_fluidscrewdown patchTypeID:interior
+Reading zone data
+Read zone1:7 name:interior-component-fluido_en_interior1_fluidscrewup-component-fluido_en_interior5_fluidscrewdown patchTypeID:interior
+Reading zone data
+Read zone1:8 name:interior-component-fluido_en_interior3_layerdown-component-fluido_en_interior4_fluiddown patchTypeID:interior
+Reading zone data
+Read zone1:9 name:interior-component-fluido_en_interior5_fluidscrewdown patchTypeID:interior
+Reading zone data
+Read zone1:10 name:interior-component-fluido_en_interior1_fluidscrewup patchTypeID:interior
+Reading zone data
+Read zone1:11 name:interior-component-fluido_en_interior3_layerdown patchTypeID:interior
+Reading zone data
+Read zone1:12 name:interior-component-fluido_en_interior4_fluiddown patchTypeID:interior
+Reading zone data
+Read zone1:13 name:interior-component-fluido_en_interior2_layerup patchTypeID:interior
+Reading zone data
+Read zone1:14 name:component-fluido_en_interior5_fluidscrewdown patchTypeID:fluid
+Reading zone data
+Read zone1:15 name:component-fluido_en_interior1_fluidscrewup patchTypeID:fluid
+Reading zone data
+Read zone1:16 name:component-fluido_en_interior3_layerdown patchTypeID:fluid
+Reading zone data
+Read zone1:17 name:component-fluido_en_interior4_fluiddown patchTypeID:fluid
+Reading zone data
+Read zone1:18 name:component-fluido_en_interior2_layerup patchTypeID:fluid
+Reading zone data
+Read zone1:21 name:barrelup patchTypeID:wall
+Reading zone data
+Read zone1:22 name:barreldown-component-fluido_en_interior3_layerdown patchTypeID:wall
+Reading zone data
+Read zone1:23 name:barreldown-component-fluido_en_interior4_fluiddown patchTypeID:wall
+Reading zone data
+Read zone1:24 name:screwup-component-fluido_en_interior1_fluidscrewup patchTypeID:wall
+Reading zone data
+Read zone1:25 name:screwup-component-fluido_en_interior2_layerup patchTypeID:wall
+Reading zone data
+Read zone1:26 name:screwdown-component-fluido_en_interior5_fluidscrewdown patchTypeID:wall
+Reading zone data
+Read zone1:27 name:screwdown-component-fluido_en_interior3_layerdown patchTypeID:wall
+Reading zone data
+Read zone1:28 name:inlet patchTypeID:velocity-inlet
+Reading zone data
+Read zone1:29 name:outlet patchTypeID:pressure-outlet
+Reading zone data
+
+
+FINISHED LEXING
+
+
+dimension of grid: 3
+Creating shapes for 3-D cells
+Building patch-less mesh...--> FOAM Warning : 
+    From function Foam::polyMesh::polyMesh(const Foam::IOobject&, Foam::pointField&&, const cellShapeList&, const faceListList&, const wordList&, const wordList&, const Foam::word&, const Foam::word&, const wordList&, bool)
+    in file meshes/polyMesh/polyMeshFromShapeMesh.C at line 595
+    Found 72166 undefined faces in mesh; adding to default patch.
+done.
+
+Building boundary and internal patches.
+Creating patch 0 for zone: 1 start: 1 end: 106 type: wall name: wall-component-fluido_en_interior3_layerdown
+Creating patch 1 for zone: 2 start: 107 end: 600 type: wall name: wall-component-fluido_en_interior2_layerup
+Creating patch 2 for zone: 3 start: 601 end: 785 type: interior name: interior-component-fluido_en_interior2_layerup-component-fluido_en_interior3_layerdown
+Creating patch 3 for zone: 4 start: 786 end: 10028 type: interior name: interior-component-fluido_en_interior1_fluidscrewup-component-fluido_en_interior2_layerup
+Creating patch 4 for zone: 5 start: 10029 end: 10609 type: interior name: interior-component-fluido_en_interior4_fluiddown-component-fluido_en_interior5_fluidscrewdown
+Creating patch 5 for zone: 6 start: 10610 end: 15472 type: interior name: interior-component-fluido_en_interior3_layerdown-component-fluido_en_interior5_fluidscrewdown
+Creating patch 6 for zone: 7 start: 15473 end: 16066 type: interior name: interior-component-fluido_en_interior1_fluidscrewup-component-fluido_en_interior5_fluidscrewdown
+Creating patch 7 for zone: 8 start: 16067 end: 16639 type: interior name: interior-component-fluido_en_interior3_layerdown-component-fluido_en_interior4_fluiddown
+Creating patch 8 for zone: 9 start: 16640 end: 208533 type: interior name: interior-component-fluido_en_interior5_fluidscrewdown
+Creating patch 9 for zone: 10 start: 208534 end: 629351 type: interior name: interior-component-fluido_en_interior1_fluidscrewup
+Creating patch 10 for zone: 11 start: 629352 end: 667306 type: interior name: interior-component-fluido_en_interior3_layerdown
+Creating patch 11 for zone: 12 start: 667307 end: 710105 type: interior name: interior-component-fluido_en_interior4_fluiddown
+Creating patch 12 for zone: 13 start: 710106 end: 776231 type: interior name: interior-component-fluido_en_interior2_layerup
+Creating patch 13 for zone: 21 start: 776232 end: 789232 type: wall name: barrelup
+Creating patch 14 for zone: 22 start: 789233 end: 796590 type: wall name: barreldown-component-fluido_en_interior3_layerdown
+Creating patch 15 for zone: 23 start: 796591 end: 799588 type: wall name: barreldown-component-fluido_en_interior4_fluiddown
+Creating patch 16 for zone: 24 start: 799589 end: 826095 type: wall name: screwup-component-fluido_en_interior1_fluidscrewup
+Creating patch 17 for zone: 25 start: 826096 end: 830436 type: wall name: screwup-component-fluido_en_interior2_layerup
+Creating patch 18 for zone: 26 start: 830437 end: 843570 type: wall name: screwdown-component-fluido_en_interior5_fluidscrewdown
+Creating patch 19 for zone: 27 start: 843571 end: 845999 type: wall name: screwdown-component-fluido_en_interior3_layerdown
+Creating patch 20 for zone: 28 start: 846000 end: 847727 type: velocity-inlet name: inlet
+Creating patch 21 for zone: 29 start: 847728 end: 847797 type: pressure-outlet name: outlet
+Adding new patch wall-component-fluido_en_interior3_layerdown of type wall as patch 0
+Adding new patch wall-component-fluido_en_interior2_layerup of type wall as patch 1
+Patch interior-component-fluido_en_interior2_layerup-component-fluido_en_interior3_layerdown is internal to the mesh  and is not being added to the boundary.
+Patch interior-component-fluido_en_interior1_fluidscrewup-component-fluido_en_interior2_layerup is internal to the mesh  and is not being added to the boundary.
+Patch interior-component-fluido_en_interior4_fluiddown-component-fluido_en_interior5_fluidscrewdown is internal to the mesh  and is not being added to the boundary.
+Patch interior-component-fluido_en_interior3_layerdown-component-fluido_en_interior5_fluidscrewdown is internal to the mesh  and is not being added to the boundary.
+Patch interior-component-fluido_en_interior1_fluidscrewup-component-fluido_en_interior5_fluidscrewdown is internal to the mesh  and is not being added to the boundary.
+Patch interior-component-fluido_en_interior3_layerdown-component-fluido_en_interior4_fluiddown is internal to the mesh  and is not being added to the boundary.
+Patch interior-component-fluido_en_interior5_fluidscrewdown is internal to the mesh  and is not being added to the boundary.
+Patch interior-component-fluido_en_interior1_fluidscrewup is internal to the mesh  and is not being added to the boundary.
+Patch interior-component-fluido_en_interior3_layerdown is internal to the mesh  and is not being added to the boundary.
+Patch interior-component-fluido_en_interior4_fluiddown is internal to the mesh  and is not being added to the boundary.
+Patch interior-component-fluido_en_interior2_layerup is internal to the mesh  and is not being added to the boundary.
+Adding new patch barrelup of type wall as patch 2
+Adding new patch barreldown-component-fluido_en_interior3_layerdown of type wall as patch 3
+Adding new patch barreldown-component-fluido_en_interior4_fluiddown of type wall as patch 4
+Adding new patch screwup-component-fluido_en_interior1_fluidscrewup of type wall as patch 5
+Adding new patch screwup-component-fluido_en_interior2_layerup of type wall as patch 6
+Adding new patch screwdown-component-fluido_en_interior5_fluidscrewdown of type wall as patch 7
+Adding new patch screwdown-component-fluido_en_interior3_layerdown of type wall as patch 8
+Adding new patch inlet of type patch as patch 9
+Adding new patch outlet of type patch as patch 10
+
+Writing mesh... to "constant/polyMesh"  done.
+
+
+End
+

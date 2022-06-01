@@ -1,0 +1,107 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-3bcbaf946ae9
+Exec   : fluentMeshToFoam nonMRF_Pellet_Extruder_v2.msh
+Date   : May 30 2022
+Time   : 21:08:10
+Host   : "calculus"
+PID    : 215405
+I/O    : uncollated
+Case   : /home/andres/OpenFOAM/andres-7/run/cases/pelletExtruder/nonSRF
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Embedded blocks in comment or unknown:       (
+Embedded blocks in comment or unknown:(
+Found end of section in unknown:) 
+Embedded blocks in comment or unknown:(
+Found end of section in unknown:)
+Found end of section in unknown:)
+Embedded blocks in comment or unknown:       (
+Embedded blocks in comment or unknown:(
+Found end of section in unknown:)
+Embedded blocks in comment or unknown:
+                (
+Found end of section in unknown:)
+Found end of section in unknown:)
+Embedded blocks in comment or unknown:       (
+Embedded blocks in comment or unknown:(
+Found end of section in unknown:)
+Found end of section in unknown:)
+Embedded blocks in comment or unknown: (
+Embedded blocks in comment or unknown:(
+Found end of section in unknown:) 
+Embedded blocks in comment or unknown:(
+Found end of section in unknown:)
+Found end of section in unknown:)
+Dimension of grid: 3
+Number of points: 70316
+
+number of faces: 462816
+Number of cells: 202779
+Reading points
+Reading points
+Reading mixed faces
+Reading uniform faces
+Reading mixed faces
+Reading mixed faces
+Reading uniform faces
+Reading mixed faces
+Other readCellGroupData: 2 1 3181b 1 0
+Reading mixed cells
+Read zone1:1 name:interior-fluido_en_interior_cuerpo1 patchTypeID:interior
+Reading zone data
+Read zone1:2 name:fluido_en_interior_cuerpo1 patchTypeID:fluid
+Reading zone data
+Read zone1:5 name:wall1 patchTypeID:wall
+Reading zone data
+Read zone1:6 name:wall2 patchTypeID:wall
+Reading zone data
+Read zone1:7 name:inlet patchTypeID:velocity-inlet
+Reading zone data
+Read zone1:8 name:outlet patchTypeID:pressure-outlet
+Reading zone data
+Read zone1:9 name:screw patchTypeID:wall
+Reading zone data
+
+
+FINISHED LEXING
+
+
+dimension of grid: 3
+Creating shapes for 3-D cells
+Building patch-less mesh...--> FOAM Warning : 
+    From function Foam::polyMesh::polyMesh(const Foam::IOobject&, Foam::pointField&&, const cellShapeList&, const faceListList&, const wordList&, const wordList&, const Foam::word&, const Foam::word&, const wordList&, bool)
+    in file meshes/polyMesh/polyMeshFromShapeMesh.C at line 595
+    Found 39685 undefined faces in mesh; adding to default patch.
+done.
+
+Building boundary and internal patches.
+Creating patch 0 for zone: 1 start: 1 end: 423131 type: interior name: interior-fluido_en_interior_cuerpo1
+Creating patch 1 for zone: 5 start: 423132 end: 439654 type: wall name: wall1
+Creating patch 2 for zone: 6 start: 439655 end: 443842 type: wall name: wall2
+Creating patch 3 for zone: 7 start: 443843 end: 444961 type: velocity-inlet name: inlet
+Creating patch 4 for zone: 8 start: 444962 end: 445027 type: pressure-outlet name: outlet
+Creating patch 5 for zone: 9 start: 445028 end: 462816 type: wall name: screw
+Patch interior-fluido_en_interior_cuerpo1 is internal to the mesh  and is not being added to the boundary.
+Adding new patch wall1 of type wall as patch 0
+Adding new patch wall2 of type wall as patch 1
+Adding new patch inlet of type patch as patch 2
+Adding new patch outlet of type patch as patch 3
+Adding new patch screw of type wall as patch 4
+
+Writing mesh... to "constant/polyMesh"  done.
+
+
+End
+
