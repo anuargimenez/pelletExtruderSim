@@ -1,0 +1,80 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      binary;
+    class       volScalarField;
+    location    "0";
+    object      T;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 0 0 1 0 0 0];
+
+internalField   uniform 405;
+
+boundaryField
+{
+    barreldown
+    {
+        type            fixedValue;
+        value           nonuniform 
+0
+;
+    }
+    barrelup
+    {
+        type            convectiveRadiativeHeatFlux;
+        mode            convectiveRadiative;
+        Ta              constant 513.15;
+        h               uniform 215;
+        emissivityNozzle 0.95;
+        emissivityFilament 0.95;
+        dNozzle         4;
+        dFilament       1.75;
+        kappaMethod     fluidThermo;
+        value           nonuniform 
+0
+;
+    }
+    hopperwall
+    {
+        type            fixedValue;
+        value           uniform 298.15;
+    }
+    inlet
+    {
+        type            fixedValue;
+        value           uniform 298.15;
+    }
+    outlet
+    {
+        type            zeroGradient;
+    }
+    screwup-part-fluido_en_interior3_fluidup
+    {
+        type            zeroGradient;
+    }
+    screwup-part-fluido_en_interior1_hopper
+    {
+        type            zeroGradient;
+    }
+    screwdown
+    {
+        type            zeroGradient;
+    }
+    procBoundary3to2
+    {
+        type            processor;
+        value           uniform 405;
+    }
+}
+
+
+// ************************************************************************* //

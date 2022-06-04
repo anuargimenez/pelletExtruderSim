@@ -1,0 +1,35 @@
+/*---------------------------------------------------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+Build  : 7-3bcbaf946ae9
+Exec   : topoSet
+Date   : Jun 04 2022
+Time   : 03:02:49
+Host   : "anuar"
+PID    : 47388
+I/O    : uncollated
+Case   : /home/anuar/OpenFOAM/anuar-7/run/cases/pelletExtruder/old/MRF_SIMPLE
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Reading topoSetDict
+
+Time = 0
+    mesh not changed.
+Created cellSet MRFzone
+    Applying source cylinderToCell
+    Adding cells with centre within cylinder, with p1 = (0 0.0035 0), p2 = (0 0.0435 0) and radius = 0.0035
+    cellSet MRFzone now size 123818
+End
+
