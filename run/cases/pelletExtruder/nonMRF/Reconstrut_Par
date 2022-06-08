@@ -1,0 +1,9 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # Run from this directory
+
+reconstructPar
+pyFoamRedoPlot.py --pickle-file Gnuplotting.analyzed/pickledPlots
+pyFoamRedoPlot.py --csv-files --pickle-file Gnuplotting.analyzed/pickledPlots
+
+echo "Done!"
+#------------------------------------------------------------------------------

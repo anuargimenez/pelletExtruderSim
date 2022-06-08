@@ -10,6 +10,9 @@ thermo.validate(args.executable(), "h", "e");
 
 volScalarField& p = thermo.p();
 
+volScalarField Cp = thermo.Cp(); // To be able to plot it in post processing
+volScalarField kappa = thermo.kappa(); // To be able to plot it in post processing
+
 volScalarField rho //create scalar field rho
 (
     IOobject
