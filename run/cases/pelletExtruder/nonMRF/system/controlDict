@@ -28,7 +28,7 @@ deltaT          1; //Time step should be chosen so small that a Courant number i
 
 writeControl    runTime;
 
-writeInterval   10; //Number of output folders or steps in ParaView (deltaT*writeInterval = step width of the folders)
+writeInterval   1; //Number of output folders or steps in ParaView (deltaT*writeInterval = step width of the folders)
 
 purgeWrite      0;
 
@@ -81,6 +81,76 @@ functions //https://www.openfoam.com/documentation/guides/latest/doc/guide-funct
 		writeControl	writeTime;
 	}
 	
+// Allows to validate conservation of mass by evaluating the mass flow rate at the inlet(BC) and outlet 	
+ 	massFlowRateInlet
+       {
+		type           surfaceFieldValue;
+		libs           ("libfieldFunctionObjects.so");
+		fields         (phi);
+		writeFields 	no;
+		regionType 	patch;
+		name           inlet;
+		operation    	sum;
+	}
+	
+ 	massFlowRateOutlet
+       {
+		type           surfaceFieldValue;
+		libs           ("libfieldFunctionObjects.so");
+		fields         (phi);
+		writeFields 	no;
+		regionType 	patch;
+		name           outlet;
+		operation    	sum;
+	}
+	
+// pressure difference between inlet and outlet
+	delta_p
+	{
+	    type    fieldValueDelta;
+	    libs    ("libfieldFunctionObjects.so");
+	    operation   subtract;
+	 
+	    region1
+	    {
+		type        surfaceFieldValue;
+		operation   average;
+		fields      (p);
+		writeFields no;
+		regionType  patch;
+		name        outlet;
+	    }
+	 
+	    region2
+	    {
+		type        surfaceFieldValue;
+		operation   average;
+		fields      (p);
+		writeFields no;
+		regionType  patch;
+		name        inlet;
+	    }
+	}
+
+// Calculates the wallShearStress in barrel and screw: sum the forces and moments on those patch
+	barrelShearStress
+	{
+		type wallShearStress;
+		libs ("libfieldFunctionObjects.so");
+		patches ("barrelup.*" "barreldown.*"); // sum the forces and moments on those patch
+		executeControl timeStep;
+		writeControl writeTime;
+	}
+	
+	screwShearStress
+	{
+		type wallShearStress;
+		libs ("libfieldFunctionObjects.so");
+		patches ("screwup.*" "screwdown.*"); // sum the forces and moments on those patch
+		executeControl timeStep;
+		writeControl writeTime;
+	}
+	
 //This function object calculates the forces and moments by integrating the pressure and skin-friction forces over a given list of patches.	
 	forcesRotor
 	{
@@ -97,7 +167,8 @@ functions //https://www.openfoam.com/documentation/guides/latest/doc/guide-funct
 	    CofR            (0 0 0);
 	}
 	
-	wallHeatFlux //indicates the heat flux through the walls into the calculation area					
+//indicates the heat flux through the walls into the calculation area		
+	wallHeatFlux				
 	{
 		type		wallHeatFlux;				
 		libs		("libfieldFunctionObjects.so");
@@ -105,8 +176,9 @@ functions //https://www.openfoam.com/documentation/guides/latest/doc/guide-funct
 		patches	("barrelup.*");
 		executeControl	timeStep;
 		writeControl	writeTime;
-		 log           true;
+		log           true;
 	}
+	
 }
 
 // ************************************************************************* //
