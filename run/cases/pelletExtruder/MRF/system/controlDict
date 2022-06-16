@@ -22,13 +22,13 @@ startTime       0;
 
 stopAt          endTime;
 
-endTime         10000;
+endTime         500;
 
-deltaT          1; //Time step should be chosen so small that a Courant number is less than 1
+deltaT          1;
 
-writeControl    timeStep;
+writeControl    runTime;
 
-writeInterval   17; //Number of output folders or steps in ParaView (deltaT*writeInterval = step width of the folders)
+writeInterval   20;
 
 purgeWrite      0;
 
@@ -46,21 +46,12 @@ graphFormat     raw;
 
 runTimeModifiable true;
 
-//_______below additional outputs and options
+
+	
 functions //https://www.openfoam.com/documentation/guides/latest/doc/guide-function-objects.html
 {
 
-	// Writes the residuals for each iteration step to a file in the postProcessing folder, graphing while solving via the "AllMonitor" script
-	residual1 
-	{
-		type		residuals;
-		libs		("libutilityFunctionObjects.so");
-		writeControl    timeStep;
-		writeInterval   1;
-		fields (p U h);
-	}
-
-	// The fieldMinMax function object computes the values and locations of field minima and maxima. These are good indicators of calculation performance, e.g. to confirm that predicted results are within expected bounds, or how well a case is converging.
+// The fieldMinMax function object computes the values and locations of field minima and maxima and outputs them when simulation reach convergence criteria. These are good indicators of calculation performance, e.g. to confirm that predicted results are within expected bounds, or how well a case is converging.
 	minMax
 	{
 		type            volFieldValue;
@@ -75,16 +66,119 @@ functions //https://www.openfoam.com/documentation/guides/latest/doc/guide-funct
 		regionType	all;
 		operation	max;
 	}
-
+	
+// Allows to post process thermophysical properties.	
+	
 	writeThermophysicalProperties
 	{
 		type		writeObjects;
 		libs		("libutilityFunctionObjects.so");
-		objects	(thermo:alpha thermo:mu);
-		//executeControl	timeStep;
+		objects	(
+				   thermo:mu
+				   Cp
+				   kappa		
+				);
 		writeControl	writeTime;
-		//writeInterval	60;
 	}
+	
+// Allows to validate conservation of mass by evaluating the mass flow rate at the inlet(BC) and outlet 	
+ 	massFlowRateInlet
+       {
+		type           surfaceFieldValue;
+		libs           ("libfieldFunctionObjects.so");
+		fields         (phi);
+		writeFields 	no;
+		regionType 	patch;
+		name           inlet;
+		operation    	sum;
+	}
+	
+ 	massFlowRateOutlet
+       {
+		type           surfaceFieldValue;
+		libs           ("libfieldFunctionObjects.so");
+		fields         (phi);
+		writeFields 	no;
+		regionType 	patch;
+		name           outlet;
+		operation    	sum;
+	}
+	
+// pressure difference between inlet and outlet
+	delta_p
+	{
+	    type    fieldValueDelta;
+	    libs    ("libfieldFunctionObjects.so");
+	    operation   subtract;
+	 
+	    region1
+	    {
+		type        surfaceFieldValue;
+		operation   average;
+		fields      (p);
+		writeFields no;
+		regionType  patch;
+		name        outlet;
+	    }
+	 
+	    region2
+	    {
+		type        surfaceFieldValue;
+		operation   average;
+		fields      (p);
+		writeFields no;
+		regionType  patch;
+		name        inlet;
+	    }
+	}
+
+// Calculates the wallShearStress in barrel and screw: sum the forces and moments on those patch
+	barrelShearStress
+	{
+		type wallShearStress;
+		libs ("libfieldFunctionObjects.so");
+		patches ("barrelup.*" "barreldown.*"); // sum the forces and moments on those patch
+		executeControl timeStep;
+		writeControl writeTime;
+	}
+	
+	screwShearStress
+	{
+		type wallShearStress;
+		libs ("libfieldFunctionObjects.so");
+		patches ("screwup.*" "screwdown.*"); // sum the forces and moments on those patch
+		executeControl timeStep;
+		writeControl writeTime;
+	}
+	
+//This function object calculates the forces and moments by integrating the pressure and skin-friction forces over a given list of patches.	
+	forcesRotor
+	{
+
+	    type            forces;
+	    libs            ("libforces.so");
+	    patches         ("screwup.*" "screwdown.*");
+
+	    // Store and write volume field representations of forces and moments
+	    writeFields     yes;
+	    log                     true;
+
+	    // Centre of rotation for moment calculations
+	    CofR            (0 0 0);
+	}
+	
+//indicates the heat flux through the walls into the calculation area		
+	wallHeatFlux				
+	{
+		type		wallHeatFlux;				
+		libs		("libfieldFunctionObjects.so");
+		//region	fluid;
+		patches	("barrelup.*");
+		executeControl	timeStep;
+		writeControl	writeTime;
+		log           true;
+	}
+	
 }
 
 // ************************************************************************* //

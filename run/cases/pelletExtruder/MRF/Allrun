@@ -13,7 +13,7 @@ runApplication setsToZones
 
 decomposePar
 
-mpirun -np 6 polymSimpleFoam -parallel > log & tail -f log # rausgenommen für Bash-Bearbeitung Scheid
+pyFoamPlotRunner.py mpirun -np 6 polymSimpleFoam -parallel
  
 echo "Done!"
 #------------------------------------------------------------------------------

@@ -10,7 +10,7 @@ runApplication fluentMeshToFoam nonMRF.msh
 
 decomposePar
 
-pyFoamPlotRunner.py mpirun -np 4 polymSimpleFoam -parallel
+pyFoamPlotRunner.py mpirun -np 6 polymSimpleFoam -parallel
  
 echo "Done!"
 #------------------------------------------------------------------------------
