@@ -25,7 +25,7 @@ MRF1
 
     origin    (0 0 0);
     axis      (0 1 0);
-    omega     constant 4;
+    omega     constant 2;
 }
 
 

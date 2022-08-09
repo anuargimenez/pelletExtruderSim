@@ -64,7 +64,7 @@ SIMPLE
     residualControl
     {
         p               2e-2;
-        U               2e-2;
+        U               1e-2;
         h		 1e-3;
     }
 }

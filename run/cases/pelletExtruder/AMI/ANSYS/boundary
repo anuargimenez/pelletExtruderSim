@@ -1,0 +1,106 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  7
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      binary;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+10
+(
+    barrelup
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          22113;
+        startFace       1038938;
+    }
+    barreldown
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          20144;
+        startFace       1061051;
+    }
+    outlet
+    {
+        type            patch;
+        nFaces          68;
+        startFace       1081195;
+    }
+    inlet
+    {
+        type            patch;
+        nFaces          7575;
+        startFace       1081263;
+    }
+    amistator-sys-component3_component1_barrel-amidown
+    {
+        type            cyclicAMI;
+        inGroups        List<word> 1(cyclicAMI);
+        nFaces          15586;
+        startFace       1088838;
+        matchTolerance  0.0001;
+        transform       noOrdering;
+        neighbourPatch  amirotor-sys-1-component3_component1_ami-screwdown;
+        method          faceAreaWeightAMI;
+    }
+    amistator-sys-component3_component2_barrel-amiup
+    {
+        type            cyclicAMI;
+        inGroups        List<word> 1(cyclicAMI);
+        nFaces          15224;
+        startFace       1104424;
+        matchTolerance  0.0001;
+        transform       noOrdering;
+        neighbourPatch  amirotor-sys-1-component3_component2_ami-screwup;
+        method          faceAreaWeightAMI;
+    }
+    amirotor-sys-1-component3_component1_ami-screwdown
+    {
+        type            cyclicAMI;
+        inGroups        List<word> 1(cyclicAMI);
+        nFaces          15584;
+        startFace       1119648;
+        matchTolerance  0.0001;
+        transform       noOrdering;
+        neighbourPatch  amistator-sys-component3_component1_barrel-amidown;
+        method          faceAreaWeightAMI;
+    }
+    amirotor-sys-1-component3_component2_ami-screwup
+    {
+        type            cyclicAMI;
+        inGroups        List<word> 1(cyclicAMI);
+        nFaces          15244;
+        startFace       1135232;
+        matchTolerance  0.0001;
+        transform       noOrdering;
+        neighbourPatch  amistator-sys-component3_component2_barrel-amiup;
+        method          faceAreaWeightAMI;
+    }
+    screwup
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          12945;
+        startFace       1150476;
+    }
+    screwdown
+    {
+        type            wall;
+        inGroups        List<word> 1(wall);
+        nFaces          13693;
+        startFace       1163421;
+    }
+)
+
+// ************************************************************************* //

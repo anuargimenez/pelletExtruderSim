@@ -1,0 +1,96 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  dev                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+actions
+(
+    {
+        name    rotif;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        sourceInfo
+        {
+	    p1          (0 0.0025 0);
+	    p2          (0 0.045 0);
+	    radius      0.00401;
+        }
+    }
+    {
+        name    outerCells;
+        type    cellSet;
+        action  new;
+        source  cellToCell;
+        sourceInfo
+        {
+            set rotif;
+        }
+    }
+    {
+        name    outerCells;
+        type    cellSet;
+        action  invert;
+    }
+
+    {
+        name    rotif;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set     rotif;
+        }
+    }
+
+
+
+    {
+        name    rotifFace;
+        type    faceSet;
+        action  new;
+        source  cellToFace;
+        sourceInfo
+        {
+            set     rotif;
+            option  all;
+        }
+    }
+    {
+        name    rotifFace;
+        type    faceSet;
+        action  subset;
+        source  cellToFace;
+        sourceInfo
+        {
+            set     outerCells;
+            option  all;
+        } 
+    }
+    {
+        name    rotif;
+        type    faceZoneSet;
+        action  new;
+        source  setsToFaceZone;
+        sourceInfo
+        {
+            faceSet     rotifFace;
+            cellSet     rotif;
+        }
+    }
+);
+
+// ************************************************************************* //
